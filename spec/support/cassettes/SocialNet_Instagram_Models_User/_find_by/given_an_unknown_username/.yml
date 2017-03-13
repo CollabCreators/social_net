@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/search?access_token=INSTAGRAM_ACCESS_TOKEN&q=01LjqweoojkjR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Mar 2017 22:40:44 GMT
+      X-Ratelimit-Limit:
+      - '500'
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Vary:
+      - Cookie, Accept-Language
+      X-Ratelimit-Remaining:
+      - '480'
+      Set-Cookie:
+      - csrftoken=DX2UJsWmSUGEDG4dpYP2kANHXRQAa96c; expires=Mon, 12-Mar-2018 22:40:44
+        GMT; Max-Age=31449600; Path=/; Secure
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '35'
+    body:
+      encoding: UTF-8
+      string: '{"data": [], "meta": {"code": 200}}'
+    http_version: 
+  recorded_at: Mon, 13 Mar 2017 22:40:44 GMT
+recorded_with: VCR 2.9.3

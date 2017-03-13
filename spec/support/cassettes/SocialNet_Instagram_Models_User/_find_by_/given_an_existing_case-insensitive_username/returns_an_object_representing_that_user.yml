@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/search?access_token=INSTAGRAM_ACCESS_TOKEN&q=Collab
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Language:
+      - en
+      Date:
+      - Mon, 13 Mar 2017 22:40:45 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Ratelimit-Remaining:
+      - '479'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - csrftoken=dOXi0A6wyGvTVe3jfGPR8SwJvgVcQVF7; expires=Mon, 12-Mar-2018 22:40:45
+        GMT; Max-Age=31449600; Path=/; Secure
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '260'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": [{"bio": "Funemployed \ud83d\ude0e Twitter/Musically: @collab
+        \ud83e\udd18", "full_name": "Collab", "website": "http://bit.ly/2nolE10",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/13414208_199612667102550_1239056879_a.jpg",
+        "id": "487786346", "username": "collab"}], "meta": {"code": 200}}'
+    http_version: 
+  recorded_at: Mon, 13 Mar 2017 22:40:45 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/487786346?access_token=INSTAGRAM_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Language:
+      - en
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      X-Ratelimit-Limit:
+      - '500'
+      Date:
+      - Mon, 13 Mar 2017 22:40:45 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      X-Ratelimit-Remaining:
+      - '478'
+      Content-Type:
+      - application/json; charset=utf-8
+      Set-Cookie:
+      - csrftoken=zpJ7PfW0ggBGglMrxHOG6wGSCTUJnIWB; expires=Mon, 12-Mar-2018 22:40:45
+        GMT; Max-Age=31449600; Path=/; Secure
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '290'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": {"bio": "Funemployed \ud83d\ude0e Twitter/Musically: @collab
+        \ud83e\udd18", "counts": {"followed_by": 23286, "media": 627, "follows": 369},
+        "website": "http://bit.ly/2nolE10", "full_name": "Collab", "username": "collab",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/13414208_199612667102550_1239056879_a.jpg",
+        "id": "487786346"}, "meta": {"code": 200}}'
+    http_version: 
+  recorded_at: Mon, 13 Mar 2017 22:40:45 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,1 @@
+require 'social_net/twitter/models/user'
