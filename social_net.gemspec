@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jeremy@collabcreators.com"]
   spec.summary       = %q{An API Client for social networks}
   spec.description   = %q{Retrieves information for Instagram users}
-  spec.homepage      = "https://github.com/Collab/social_net"
+  spec.homepage      = "https://github.com/CollabCreators/social_net"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
