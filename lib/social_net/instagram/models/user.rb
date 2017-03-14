@@ -5,9 +5,10 @@ module SocialNet
   module Instagram
     module Models
       class User
-        attr_reader :username, :follower_count
+        attr_reader :id, :username, :follower_count
 
         def initialize(attrs = {})
+          @id = attrs['id']
           @username = attrs['username']
           @follower_count = attrs['counts']['followed_by']
         end
