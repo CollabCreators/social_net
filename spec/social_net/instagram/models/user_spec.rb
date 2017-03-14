@@ -49,14 +49,14 @@ describe SocialNet::Instagram::User, :vcr do
     end
   end
 
-  describe '.posts' do
+  describe '.videos' do
     subject(:user) { SocialNet::Instagram::User.find_by! username: username }
     context 'given an existing user' do
       let(:username) { existing_username }
 
-      it 'returns an array of posts from the user' do
-        expect(user.posts).to be_an Array
-        expect(user.posts.first).to be_an_instance_of SocialNet::Instagram::Video
+      it 'returns an array of video posts from the user' do
+        expect(user.videos).to be_an Array
+        expect(user.videos.first).to be_an_instance_of SocialNet::Instagram::Video
       end
     end
   end

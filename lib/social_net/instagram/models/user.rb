@@ -13,10 +13,10 @@ module SocialNet
           @follower_count = attrs['counts']['followed_by']
         end
 
-        # Returns the existing Instagram user's posts
+        # Returns the existing Instagram user's most recent videos
         #
-        # @return [SocialNet::Instagram::Models::Video] when the posts are found.
-        def posts
+        # @return [SocialNet::Instagram::Models::Video] when the videos are found.
+        def videos
           request = Api::Request.new endpoint: "users/#{id}/media/recent"
           videos = request.run.select {|p| p['type'] == 'video'}
           videos.map {|r| SocialNet::Instagram::Video.new r }
