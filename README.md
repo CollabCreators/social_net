@@ -3,6 +3,7 @@ SocialNet - a Ruby client for social networks API
 
 SocialNet helps you write apps that need to interact with Twitter, Instagram and Facebook.
 
+## Note: Only Instagram works at the moment
 
 After [configuring your Twitter app](#configuring-your-twitter-app), you can run commands like:
 
@@ -24,7 +25,7 @@ After [configuring your Facebook app](#configuring-your-facebook-app), you can r
 ```ruby
 page = SocialNet::Facebook::Page.find_by username: 'collab'
 page.username #=> "collab"
-page.likes #=> 30094
+page.likes #=> 23289
 ```
 
 How to install
@@ -32,11 +33,11 @@ How to install
 
 To install on your system, run
 
-    gem install net
+    gem install social_net
 
 To use inside a bundled Ruby project, add this line to the Gemfile:
 
-    gem 'social_net', '~> 0.1.0'
+    gem 'social_net', '~> 0.1.1'
 
 Since the gem follows [Semantic Versioning](http://semver.org),
 indicating the full version in your Gemfile (~> *major*.*minor*.*patch*)
