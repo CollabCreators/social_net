@@ -13,6 +13,19 @@ module SocialNet
           @follower_count = attrs['counts']['followed_by']
         end
 
+        # Returns the existing Instagram user's posts
+        #
+        # @return [SocialNet::Instagram::Models::Video] when the posts are found.
+        def posts
+          request = Api::Request.new endpoint: "users/#{id}/media/recent"
+          videos = request.run.select {|p| p['type'] == 'video'}
+          videos.map {|r| SocialNet::Instagram::Video.new r }
+        rescue Errors::ResponseError => error
+          case error.response
+            when Net::HTTPBadRequest then raise Errors::UnknownUser
+          end
+        end
+
         # Returns the existing Instagram user matching the provided attributes or
         # nil when the user is not found.
         #

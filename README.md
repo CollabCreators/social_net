@@ -18,6 +18,13 @@ After [configuring your Instagram app](#configuring-your-instagram-app), you can
 user = SocialNet::Instagram::User.find_by username: 'Collab'
 user.username #=> "Collab"
 user.follower_count #=> 7025
+user.posts #=>
+  # [SocialNet::Instagram::Models::Video
+  #   @caption='Diet starts Monday... 😂🍩',
+  #   @file='https://scontent.cdninstagram.com/t50.2886-16/17192719_791273527696774_5253726776697290752_n.mp4',
+  #   @id='1464710084172115373_487786346',
+  #   @likes=127,
+  #   @thumbnail='https://scontent.cdninstagram.com/t51.2885-15/e15/17076697_308353549580106_8220285822193106944_n.jpg']"
 ```
 
 After [configuring your Facebook app](#configuring-your-facebook-app), you can run commands like:
@@ -74,6 +81,7 @@ Use [SocialNet::Instagram::User]() to:
 * retrieve an Instagram user by username
 * retrieve an Instagram user by id
 * access the number of followers of an Instagram user
+* retrieve recent posts of an Instagram user
 
 ```ruby
 user = SocialNet::Instagram::User.find_by username: 'collab'
@@ -81,6 +89,14 @@ user.follower_count #=> 24198
 
 user = SocialNet::Instagram::User.find_by id: 270587948
 user.follower_count #=> 24198
+
+user.posts #=>
+  # [SocialNet::Instagram::Models::Video
+  #   @caption='Diet starts Monday... 😂🍩',
+  #   @file='https://scontent.cdninstagram.com/t50.2886-16/17192719_791273527696774_5253726776697290752_n.mp4',
+  #   @id='1464710084172115373_487786346',
+  #   @likes=127,
+  #   @thumbnail='https://scontent.cdninstagram.com/t51.2885-15/e15/17076697_308353549580106_8220285822193106944_n.jpg']"
 ```
 
 *The methods above require a configured Instagram app (see below).*

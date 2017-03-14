@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/search?access_token=INSTAGRAM_ACCESS_TOKEN&q=Collab
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Tue, 14 Mar 2017 18:30:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Cookie, Accept-Language
+      Pragma:
+      - no-cache
+      Content-Language:
+      - en
+      Set-Cookie:
+      - csrftoken=qm9rhW3Ww7Yj6slrRPYWIrsnuh2w7DXs; expires=Tue, 13-Mar-2018 18:30:53
+        GMT; Max-Age=31449600; Path=/; Secure
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '124'
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"error_type": "OAuthAccessTokenException", "error_message":
+        "The access_token provided is invalid.", "code": 400}}'
+    http_version: 
+  recorded_at: Tue, 14 Mar 2017 18:30:53 GMT
+recorded_with: VCR 2.9.3
