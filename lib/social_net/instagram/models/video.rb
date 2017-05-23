@@ -2,7 +2,7 @@ module SocialNet
   module Instagram
     module Models
       class Video
-        attr_reader :id, :caption, :likes, :file, :thumbnail
+        attr_reader :id, :caption, :likes, :file, :thumbnail, :link
 
         def initialize(attrs = {})
           @id = attrs['id']
@@ -10,6 +10,7 @@ module SocialNet
           @likes = attrs['likes']['count']
           @file = attrs['videos']['standard_resolution']['url']
           @thumbnail = attrs['images']['standard_resolution']['url']
+          @link = attrs['link']
         end
       end
     end
