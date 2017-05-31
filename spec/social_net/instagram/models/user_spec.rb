@@ -12,6 +12,7 @@ describe SocialNet::Instagram::User, :vcr do
 
   let(:existing_username) { 'Collab' }
   let(:unknown_username) { '01LjqweoojkjR' }
+  let(:private_username) { '4ever_kelz' }
 
   describe '.find_by' do
     subject(:user) { SocialNet::Instagram::User.find_by username: username }
@@ -33,11 +34,11 @@ describe SocialNet::Instagram::User, :vcr do
 
   describe '.find_by!' do
     subject(:user) { SocialNet::Instagram::User.find_by! username: username }
+
     context 'given an existing (case-insensitive) username' do
       let(:username) { existing_username }
 
       it 'returns an object representing that user' do
-
         expect(user.username).to eq 'collab'
         expect(user.follower_count).to be_an Integer
       end
@@ -46,6 +47,11 @@ describe SocialNet::Instagram::User, :vcr do
     context 'given an unknown username' do
       let(:username) { unknown_username }
       it { expect{user}.to raise_error SocialNet::Instagram::UnknownUser }
+    end
+
+    context 'given a private username' do
+      let(:username) { private_username }
+      it { expect{user}.to raise_error SocialNet::Instagram::PrivateUser }
     end
   end
 

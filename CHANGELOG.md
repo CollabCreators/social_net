@@ -21,3 +21,7 @@ For more information about changelogs, check
 ## 0.2.5 - 2017-5-31
 
 * [BUGFIX] Return nil for an Instagram video's caption if it doesn't exist.
+
+## 0.2.6 - 2017-5-31
+
+* [BUGFIX] Add missing tests and errors for a private Instagram user.

@@ -1,0 +1,124 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/search?access_token=INSTAGRAM_ACCESS_TOKEN&q=4ever_kelz
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4946'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Content-Language:
+      - en
+      Date:
+      - Wed, 31 May 2017 22:55:49 GMT
+      Set-Cookie:
+      - csrftoken=pXysynA51YFlvBD9OvK8gbzWVbLoMrV0; expires=Wed, 30-May-2018 22:55:49
+        GMT; Max-Age=31449600; Path=/; Secure
+      - rur=FRC; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '655'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": [{"id": "317274250", "username": "4ever_kelz", "full_name":
+        "", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18723017_261505297650578_2491961998191886336_n.jpg"},
+        {"id": "1430579128", "username": "kelz_5ever", "full_name": "@4ever_kelz 5Evaaaaaaa\ud83d\ude1d",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/10525518_321491474693063_518369360_a.jpg"},
+        {"id": "2909283868", "username": "4everkelz", "full_name": "", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18160804_1368392969893306_8482577202922127360_a.jpg"},
+        {"id": "1427099354", "username": "4ever_kelz_", "full_name": "Rider Gang 4
+        Life\u2764\ufe0f", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/917194_810340968999864_779480532_a.jpg"},
+        {"id": "1412026177", "username": "4ever_kelzz", "full_name": "", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/924109_1398262387143189_745772866_a.jpg"},
+        {"id": "1924152124", "username": "yung.poppy.and.4everkelz", "full_name":
+        "yungpoppy and 4everkelz", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11350990_1597356853851108_1827961176_a.jpg"},
+        {"id": "1428011485", "username": "4everkelz_main", "full_name": "Da Kelz \ud83d\udc81\ud83c\udffd",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/10598644_1447639975513072_435174271_a.jpg"},
+        {"id": "733524793", "username": "_4everkelz", "full_name": "", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/17882334_282034328914418_7861258025472884736_a.jpg"},
+        {"id": "1958247453", "username": "4everkelz.fanpage", "full_name": "", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/11906329_960233084022564_1448528159_a.jpg"},
+        {"id": "433445008", "username": "4ever_kelzfannpage", "full_name": "rider
+        gang", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/10990658_1533148803611995_425548866_a.jpg"},
+        {"id": "826502883", "username": "4everkelzz", "full_name": "kelzz.", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18645993_130880437475430_1421491375903342592_a.jpg"}],
+        "meta": {"code": 200}}'
+    http_version: 
+  recorded_at: Wed, 31 May 2017 22:55:49 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/317274250?access_token=INSTAGRAM_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4945'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language
+      Content-Language:
+      - en
+      Date:
+      - Wed, 31 May 2017 22:55:49 GMT
+      Set-Cookie:
+      - csrftoken=4VRiHEmCyB4Ukk5XSSZLXMmfsUBxgsbL; expires=Wed, 30-May-2018 22:55:49
+        GMT; Max-Age=31449600; Path=/; Secure
+      - rur=FRC; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '109'
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"code": 400, "error_type": "APINotAllowedError", "error_message":
+        "you cannot view this resource"}}'
+    http_version: 
+  recorded_at: Wed, 31 May 2017 22:55:49 GMT
+recorded_with: VCR 2.9.3

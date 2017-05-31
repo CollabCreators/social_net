@@ -36,7 +36,7 @@ module SocialNet
         #   (case-insensitive).
         def self.find_by(params = {})
           find_by! params
-        rescue Errors::UnknownUser
+        rescue Errors::UnknownUser, Errors::PrivateUser
           nil
         end
 
