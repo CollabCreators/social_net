@@ -6,7 +6,7 @@ module SocialNet
 
         def initialize(attrs = {})
           @id = attrs['id']
-          @caption = attrs['caption']['text']
+          @caption = attrs['caption']['text'] if attrs['caption']
           @likes = attrs['likes']['count']
           @file = attrs['videos']['standard_resolution']['url']
           @thumbnail = attrs['images']['standard_resolution']['url']

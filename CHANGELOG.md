@@ -17,3 +17,7 @@ For more information about changelogs, check
 ## 0.2.2 - 2017-3-14
 
 * [IMPROVEMENT] Rename `.posts` to `.videos`.
+
+## 0.2.5 - 2017-5-31
+
+* [BUGFIX] Return nil for an Instagram video's caption if it doesn't exist.
