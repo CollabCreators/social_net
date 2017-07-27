@@ -23,7 +23,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4966'
+      - '4985'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Pragma:
@@ -35,11 +35,11 @@ http_interactions:
       Content-Language:
       - en
       Date:
-      - Wed, 26 Jul 2017 23:54:13 GMT
+      - Thu, 27 Jul 2017 19:38:34 GMT
       Set-Cookie:
-      - csrftoken=Wup5cI7PHEwOEWvIGvzpsEx5Rgp9LSrp; expires=Wed, 25-Jul-2018 23:54:13
+      - csrftoken=xbuHrg8FggVY3hQRyeBIPnBe5g5SMYd2; expires=Thu, 26-Jul-2018 19:38:34
         GMT; Max-Age=31449600; Path=/; Secure
-      - rur=FTW; Path=/
+      - rur=FRC; Path=/
       Connection:
       - keep-alive
       Content-Length:
@@ -57,7 +57,7 @@ http_interactions:
         Sahur)", "created_time": "1496769139", "from": {"id": "2920261222", "full_name":
         "EjamBrocolli", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/20181021_187099138494103_2678022811838054400_a.jpg",
         "username": "ejamtucker"}}, "user_has_liked": false, "likes": {"count": 112},
-        "tags": ["hallofmeat", "skate"], "filter": "Normal", "comments": {"count":
+        "tags": ["skate", "hallofmeat"], "filter": "Normal", "comments": {"count":
         17}, "type": "video", "link": "https://www.instagram.com/p/BVAYzy_g3vN/",
         "location": null, "attribution": null, "users_in_photo": [], "videos": {"standard_resolution":
         {"width": 640, "height": 640, "url": "https://scontent.cdninstagram.com/t50.2886-16/18954088_1445442168855176_8271610702855143424_n.mp4"},
@@ -65,5 +65,5 @@ http_interactions:
         "low_resolution": {"width": 480, "height": 480, "url": "https://scontent.cdninstagram.com/t50.2886-16/18928806_320856988345914_4131951279704375296_n.mp4"}}},
         "meta": {"code": 200}}'
     http_version: 
-  recorded_at: Wed, 26 Jul 2017 23:54:13 GMT
+  recorded_at: Thu, 27 Jul 2017 19:38:34 GMT
 recorded_with: VCR 2.9.3

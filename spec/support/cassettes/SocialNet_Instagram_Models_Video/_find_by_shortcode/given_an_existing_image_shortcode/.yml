@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/media/shortcode/BW8yP8FgXZt?access_token=INSTAGRAM_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4986'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Content-Language:
+      - en
+      Date:
+      - Thu, 27 Jul 2017 19:38:30 GMT
+      Set-Cookie:
+      - csrftoken=UOSSAlqFmUbRcljWokxgjU3K5mJ4JvDu; expires=Thu, 26-Jul-2018 19:38:30
+        GMT; Max-Age=31449600; Path=/; Secure
+      - rur=FRC; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1337'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": {"id": "1566347768052676205_487786346", "user": {"id": "487786346",
+        "full_name": "Collab", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18380272_1415230358523681_1718467959032119296_a.jpg",
+        "username": "collab"}, "images": {"thumbnail": {"width": 150, "height": 150,
+        "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c58.0.963.963/20225306_1964653293814332_1850808958122459136_n.jpg"},
+        "low_resolution": {"width": 320, "height": 285, "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20225306_1964653293814332_1850808958122459136_n.jpg"},
+        "standard_resolution": {"width": 640, "height": 570, "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20225306_1964653293814332_1850808958122459136_n.jpg"}},
+        "created_time": "1500943226", "caption": {"id": "17867912779140215", "text":
+        "Miss the Collab x @NewHopeClub livestream? Blake loves a good romcom, George
+        can teleport, Reece is always down for a prank, and all the boys may be aliens.
+        Come hang with Collab weekdays on live.ly at 2:30PM PST. \ud83d\udc7d\ud83c\udfb8\ud83d\ude4c\n____\n#NewHopeClub
+        #musically #lively #CollabFam", "created_time": "1500943226", "from": {"id":
+        "487786346", "full_name": "Collab", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18380272_1415230358523681_1718467959032119296_a.jpg",
+        "username": "collab"}}, "user_has_liked": false, "likes": {"count": 103},
+        "tags": ["musically", "newhopeclub", "collabfam", "lively"], "filter": "Normal",
+        "comments": {"count": 1}, "type": "image", "link": "https://www.instagram.com/p/BW8yP8FgXZt/",
+        "location": null, "attribution": null, "users_in_photo": [{"user": {"id":
+        "12468050", "full_name": "J U L I A \u2022 A B N E R", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18512602_1052410774891444_7398788660142800896_a.jpg",
+        "username": "juliaabner"}, "position": {"x": 0.8866666666666667, "y": 0.680373831775701}},
+        {"user": {"id": "21565883", "full_name": "Reece Bibby", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/20066868_1427792173936290_460174422569910272_a.jpg",
+        "username": "newhopereece"}, "position": {"x": 0.3026666666666666, "y": 0.1345794392523365}},
+        {"user": {"id": "273978632", "full_name": "Will McFadden", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/17661819_207451526408917_2143503239813791744_a.jpg",
+        "username": "willmcfadden"}, "position": {"x": 0.7013333333333334, "y": 0.4755140186915888}},
+        {"user": {"id": "362367244", "full_name": "Blake Richardson", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18299732_1823610774624697_3252079022405844992_a.jpg",
+        "username": "newhopeblake"}, "position": {"x": 0.4213333333333333, "y": 0.2078504672897196}},
+        {"user": {"id": "461171563", "full_name": "George Smith", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/20065329_330688504048861_3205172348831399936_a.jpg",
+        "username": "newhopegeorge"}, "position": {"x": 0.12, "y": 0.4650467289719626}},
+        {"user": {"id": "1523104692", "full_name": "musical.ly", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/15623723_1884415811791802_316399851170430976_n.jpg",
+        "username": "musical.ly"}, "position": {"x": 0.4786666666666667, "y": 0.8044859813084112}},
+        {"user": {"id": "2155383298", "full_name": "New Hope Club", "profile_picture":
+        "https://scontent.cdninstagram.com/t51.2885-19/s150x150/15624530_397945037221212_5299798607413641216_a.jpg",
+        "username": "newhopeclub"}, "position": {"x": 0.328, "y": 0.5577570093457944}},
+        {"user": {"id": "3289333658", "full_name": "live.ly", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/15034999_570474333148474_351167774640308224_a.jpg",
+        "username": "live.ly"}, "position": {"x": 0.2186666666666667, "y": 0.1958878504672897}}]},
+        "meta": {"code": 200}}'
+    http_version: 
+  recorded_at: Thu, 27 Jul 2017 19:38:30 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/media/shortcode/BW-nC7xg8ZX?access_token=INSTAGRAM_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4983'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Content-Language:
+      - en
+      Date:
+      - Thu, 27 Jul 2017 19:38:35 GMT
+      Set-Cookie:
+      - csrftoken=h06eGTYAEOh7UwFsy3VzNYjWC6efmV7K; expires=Thu, 26-Jul-2018 19:38:35
+        GMT; Max-Age=31449600; Path=/; Secure
+      - rur=FRC; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '726'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": {"id": "1566861445805885015_487786346", "user": {"id": "487786346",
+        "full_name": "Collab", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18380272_1415230358523681_1718467959032119296_a.jpg",
+        "username": "collab"}, "images": {"thumbnail": {"width": 150, "height": 150,
+        "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e15/c0.76.612.612/20214481_1993293670904550_4498270337460338688_n.jpg"},
+        "low_resolution": {"width": 320, "height": 400, "url": "https://scontent.cdninstagram.com/t51.2885-15/e15/p320x320/20214481_1993293670904550_4498270337460338688_n.jpg"},
+        "standard_resolution": {"width": 612, "height": 765, "url": "https://scontent.cdninstagram.com/t51.2885-15/e15/20214481_1993293670904550_4498270337460338688_n.jpg"}},
+        "created_time": "1501004461", "caption": {"id": "17877475462121699", "text":
+        "Her: Babe some guy just asked for my number \u2800\nMe: Who?\u2800\nHer:
+        That guy over th.....\u2800\nMe:\u2800\n____\n\ud83c\udfa5: @thebestfailstbf
+        #fail #funnyvideos #beach #beachlife", "created_time": "1501004461", "from":
+        {"id": "487786346", "full_name": "Collab", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/18380272_1415230358523681_1718467959032119296_a.jpg",
+        "username": "collab"}}, "user_has_liked": false, "likes": {"count": 84}, "tags":
+        ["beach", "beachlife", "funnyvideos", "fail"], "filter": "Clarendon", "comments":
+        {"count": 4}, "type": "video", "link": "https://www.instagram.com/p/BW-nC7xg8ZX/",
+        "location": null, "attribution": null, "users_in_photo": [], "videos": {"standard_resolution":
+        {"width": 480, "height": 600, "url": "https://scontent.cdninstagram.com/t50.2886-16/20372137_156190564936990_2601958215176421376_n.mp4"},
+        "low_bandwidth": {"width": 480, "height": 600, "url": "https://scontent.cdninstagram.com/t50.2886-16/20372137_156190564936990_2601958215176421376_n.mp4"},
+        "low_resolution": {"width": 480, "height": 600, "url": "https://scontent.cdninstagram.com/t50.2886-16/20372137_156190564936990_2601958215176421376_n.mp4"}}},
+        "meta": {"code": 200}}'
+    http_version: 
+  recorded_at: Thu, 27 Jul 2017 19:38:35 GMT
+recorded_with: VCR 2.9.3

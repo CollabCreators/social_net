@@ -40,6 +40,8 @@ module SocialNet
         def self.find_by!(params = {})
           if params[:media_id]
             find_by_id! params[:media_id]
+          elsif params[:shortcode]
+            find_by_id! "shortcode/#{params[:shortcode]}"
           end
         end
 
@@ -47,7 +49,9 @@ module SocialNet
 
         def self.find_by_id!(id)
           request = Api::Request.new endpoint: "media/#{id}"
-          new request.run
+          video = request.run
+          raise Errors::UnknownVideo if video['type'] == 'image'
+          new video
         rescue Errors::ResponseError => error
           case error.response
             when Net::HTTPBadRequest then raise Errors::UnknownVideo
