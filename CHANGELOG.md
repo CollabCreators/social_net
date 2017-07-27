@@ -25,3 +25,7 @@ For more information about changelogs, check
 ## 0.2.6 - 2017-5-31
 
 * [BUGFIX] Add missing tests and errors for a private Instagram user.
+
+## 0.2.7 - 2017-7-26
+
+* [FEATURE] Add `Instagram::Video` support for `find_by media_id:` and `find_by! media_id:`
