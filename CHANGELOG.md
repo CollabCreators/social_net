@@ -29,3 +29,7 @@ For more information about changelogs, check
 ## 0.2.7 - 2017-7-26
 
 * [FEATURE] Add `Instagram::Video` support for `find_by media_id:` and `find_by! media_id:`
+
+## 0.2.8 - 2017-7-27
+
+* [FEATURE] Add `Instagram::Video` support for `find_by shortcode:` and `find_by! shortcode:`
