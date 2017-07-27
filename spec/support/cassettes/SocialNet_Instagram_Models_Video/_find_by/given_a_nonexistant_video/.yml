@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/media/31231231231231232?access_token=INSTAGRAM_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4965'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language
+      Content-Language:
+      - en
+      Date:
+      - Wed, 26 Jul 2017 23:54:13 GMT
+      Set-Cookie:
+      - csrftoken=j41eKlQbLj0zVbPl8wuhhy59nkmzQR7X; expires=Wed, 25-Jul-2018 23:54:13
+        GMT; Max-Age=31449600; Path=/; Secure
+      - rur=FTW; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '94'
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"code": 400, "error_type": "APINotFoundError", "error_message":
+        "invalid media id"}}'
+    http_version: 
+  recorded_at: Wed, 26 Jul 2017 23:54:13 GMT
+recorded_with: VCR 2.9.3

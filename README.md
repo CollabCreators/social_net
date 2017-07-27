@@ -99,6 +99,16 @@ user.videos #=>
   #   @thumbnail='https://scontent.cdninstagram.com/t51.2885-15/e15/17076697_308353549580106_8220285822193106944_n.jpg']"
 ```
 
+Use [SocialNet::Instagram::Video]() to:
+
+* retrieve an Instagram video by media id
+
+```ruby
+video = SocialNet::Instagram::Video.find_by media_id: '1531332985868221389'
+video.link #=> 'https://www.instagram.com/p/BVAYzy_g3vN/'
+video.file #=> 'https://scontent.cdninstagram.com/t50.2886-16/18954088_1445442168855176_8271610702855143424_n.mp4'
+```
+
 *The methods above require a configured Instagram app (see below).*
 
 SocialNet::Facebook::Page
