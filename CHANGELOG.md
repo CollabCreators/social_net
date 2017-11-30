@@ -33,3 +33,7 @@ For more information about changelogs, check
 ## 0.2.8 - 2017-7-27
 
 * [FEATURE] Add `Instagram::Video` support for `find_by shortcode:` and `find_by! shortcode:`
+
+## 0.2.9 - 2017-11-30
+
+* [FEATURE] Add `Instagram::Video` support for `find_by private_shortcode:` and `find_by! private_shortcode:`
