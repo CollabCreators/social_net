@@ -1,4 +1,5 @@
 require 'social_net/instagram/api/request'
+require 'social_net/instagram/api/scrape_request'
 require 'social_net/instagram/errors'
 
 module SocialNet
@@ -42,6 +43,8 @@ module SocialNet
             find_by_id! params[:media_id]
           elsif params[:shortcode]
             find_by_id! "shortcode/#{params[:shortcode]}"
+          elsif params[:private_shortcode]
+            find_by_private_shortcode! params[:private_shortcode]
           end
         end
 
@@ -55,6 +58,17 @@ module SocialNet
         rescue Errors::ResponseError => error
           case error.response
             when Net::HTTPBadRequest then raise Errors::UnknownVideo
+          end
+        end
+
+        def self.find_by_private_shortcode!(id)
+          request = Api::ScrapeRequest.new shortcode: id
+          video = request.run
+          new video
+        rescue Errors::ResponseError => error
+          case error.response
+            when Net::HTTPBadRequest then raise Errors::UnknownVideo
+            when Net::HTTPNotFound then raise Errors::UnknownVideo
           end
         end
       end

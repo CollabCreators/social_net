@@ -9,6 +9,8 @@ VCR.configure do |c|
   c.filter_sensitive_data('ACCESS_TOKEN') do |interaction|
     if interaction.request.headers['Authorization']
       interaction.request.headers['Authorization'].first
+    elsif interaction.response.body.include?('is_private') || interaction.response.body.include?('Page Not Found')
+      nil
     else
       JSON(interaction.response.body)['access_token']
     end

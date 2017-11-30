@@ -103,10 +103,13 @@ Use [SocialNet::Instagram::Video]() to:
 
 * retrieve an Instagram video by media id
 * retrieve an Instagram video by shortcode
+* retrieve a private Instagram video by shortcode
 
 ```ruby
 video = SocialNet::Instagram::Video.find_by media_id: '1566861445805885015'
 video = SocialNet::Instagram::Video.find_by shortcode: 'BW-nC7xg8ZX'
+video = SocialNet::Instagram::Video.find_by private_shortcode: 'BX8sBI0hS9cyuR0iORRax8F3OamLIJZCwaZRyQ0'
+
 
 video.link #=> 'https://www.instagram.com/p/BW-nC7xg8ZX/'
 video.file #=> 'https://scontent.cdninstagram.com/t50.2886-16/20372137_156190564936990_2601958215176421376_n.mp4'
