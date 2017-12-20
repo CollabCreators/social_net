@@ -48,11 +48,13 @@ module SocialNet
           raise Errors::UnknownVideo unless video_data[:is_video]
           {}.tap do |video|
             video['id'] = video_data[:shortcode]
-            video['caption'] = {'text' => video_data[:edge_media_to_caption][:edges][0][:node][:text]}
             video['likes'] = {'count' => video_data[:edge_media_preview_like][:count]}
             video['videos'] = {'standard_resolution' => {'url' => video_data[:video_url]}}
             video['images'] = {'standard_resolution' => {'url' => video_data[:display_url]}}
             video['link'] = "https://www.instagram.com/p/#{video_data[:shortcode]}/"
+            if video_data[:edge_media_to_caption][:edges].present?
+              video['caption'] = {'text' => video_data[:edge_media_to_caption][:edges][0][:node][:text]}
+            end
           end
         end
 

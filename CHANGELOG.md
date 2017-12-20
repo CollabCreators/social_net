@@ -37,3 +37,7 @@ For more information about changelogs, check
 ## 0.2.9 - 2017-11-30
 
 * [FEATURE] Add `Instagram::Video` support for `find_by private_shortcode:` and `find_by! private_shortcode:`
+
+## 0.2.10 - 2017-12-20
+
+* [BUGFIX] Return nil for an Private Instagram video's caption if it doesn't exist.
