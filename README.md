@@ -114,8 +114,6 @@ video.link #=> 'https://www.instagram.com/p/BW-nC7xg8ZX/'
 video.file #=> 'https://scontent.cdninstagram.com/t50.2886-16/20372137_156190564936990_2601958215176421376_n.mp4'
 ```
 
-*The methods above require a configured Instagram app (see below).*
-
 SocialNet::Facebook::Page
 --------------------
 
