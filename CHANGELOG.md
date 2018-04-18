@@ -41,3 +41,8 @@ For more information about changelogs, check
 ## 0.2.10 - 2017-12-20
 
 * [BUGFIX] Return nil for an Private Instagram video's caption if it doesn't exist.
+
+## 0.2.11 - 2018-04-17
+
+* [BUGFIX] Remove deprecated `find_by media_id` endpoint.
+* [IMPROVEMENT] Remove `find_by private_shortcode`.
