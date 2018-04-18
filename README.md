@@ -107,7 +107,7 @@ Use [SocialNet::Instagram::Video]() to:
 
 ```ruby
 video = SocialNet::Instagram::Video.find_by shortcode: 'BW-nC7xg8ZX'
-video = SocialNet::Instagram::Video.find_by private_shortcode: 'BX8sBI0hS9cyuR0iORRax8F3OamLIJZCwaZRyQ0'
+video = SocialNet::Instagram::Video.find_by shortcode: 'BX8sBI0hS9cyuR0iORRax8F3OamLIJZCwaZRyQ0' # Private shortcode
 
 
 video.link #=> 'https://www.instagram.com/p/BW-nC7xg8ZX/'
