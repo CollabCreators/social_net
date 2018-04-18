@@ -39,36 +39,21 @@ module SocialNet
         # @option params [String] :media_id The Instagram video's media id.
         # @raise [SocialNet::Errors::UnknownVideo] if the video is not found.
         def self.find_by!(params = {})
-          if params[:media_id]
-            find_by_id! params[:media_id]
-          elsif params[:shortcode]
-            find_by_id! "shortcode/#{params[:shortcode]}"
-          elsif params[:private_shortcode]
-            find_by_private_shortcode! params[:private_shortcode]
+          if params[:shortcode]
+            find_by_shortcode! params[:shortcode]
           end
         end
 
         private
 
-        def self.find_by_id!(id)
-          request = Api::Request.new endpoint: "media/#{id}"
-          video = request.run
-          raise Errors::UnknownVideo if video['type'] == 'image'
-          new video
-        rescue Errors::ResponseError => error
-          case error.response
-            when Net::HTTPBadRequest then raise Errors::UnknownVideo
-          end
-        end
-
-        def self.find_by_private_shortcode!(id)
+        def self.find_by_shortcode!(id)
           request = Api::ScrapeRequest.new shortcode: id
           video = request.run
           new video
         rescue Errors::ResponseError => error
           case error.response
-            when Net::HTTPBadRequest then raise Errors::UnknownVideo
-            when Net::HTTPNotFound then raise Errors::UnknownVideo
+          when Net::HTTPBadRequest then raise Errors::UnknownVideo
+          when Net::HTTPNotFound then raise Errors::UnknownVideo
           end
         end
       end

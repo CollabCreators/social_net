@@ -75,6 +75,7 @@ users.map(&:follower_count).sort #=> [12, 48_200]
 
 SocialNet::Instagram::User
 --------------------
+* The User methods are now deprecated due to changes in Instagram's new policies
 
 Use [SocialNet::Instagram::User]() to:
 
@@ -101,12 +102,10 @@ user.videos #=>
 
 Use [SocialNet::Instagram::Video]() to:
 
-* retrieve an Instagram video by media id
 * retrieve an Instagram video by shortcode
 * retrieve a private Instagram video by shortcode
 
 ```ruby
-video = SocialNet::Instagram::Video.find_by media_id: '1566861445805885015'
 video = SocialNet::Instagram::Video.find_by shortcode: 'BW-nC7xg8ZX'
 video = SocialNet::Instagram::Video.find_by private_shortcode: 'BX8sBI0hS9cyuR0iORRax8F3OamLIJZCwaZRyQ0'
 

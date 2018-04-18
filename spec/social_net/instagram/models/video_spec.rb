@@ -10,58 +10,20 @@ describe SocialNet::Instagram::Video, :vcr do
     end
   end
 
-  let(:existing_media_id) { '1531332985868221389' }
-  let(:unknown_media_id) { '31231231231231232' }
   let(:existing_video_shortcode) { 'BW-nC7xg8ZX' }
   let(:unknown_shortcode) { 'BQ-nC7xg8ZX' }
   let(:existing_image_shortcode) { 'BW8yP8FgXZt' }
   let(:existing_private_shortcode) { 'BX8sBI0hS9cyuR0iORRax8F3OamLIJZCwaZRyQ0' }
   let(:unknown_private_shortcode) { 'MX8sBI0hS9cyuR0iORRax8F3OamLIJZCwaZRyQ0' }
 
-  describe '.find_by media_id' do
-    subject(:video) { SocialNet::Instagram::Video.find_by media_id: media_id }
-
-    context 'given an existing video\'s media id' do
-      let(:media_id) { existing_media_id }
-
-      it 'returns an object representing that video' do
-        expect(video.id).to eq '1531332985868221389_2920261222'
-        expect(video.link).to eq 'https://www.instagram.com/p/BVAYzy_g3vN/'
-      end
-    end
-
-    context 'given a nonexistant video' do
-      let(:media_id) { unknown_media_id }
-      it { expect(video).to be_nil }
-    end
-  end
-
-  describe '.find_by! media_id' do
-    subject(:video) { SocialNet::Instagram::Video.find_by! media_id: media_id }
-
-    context 'given an existing video\'s media id' do
-      let(:media_id) { existing_media_id }
-
-      it 'returns an object representing that video' do
-        expect(video.id).to eq '1531332985868221389_2920261222'
-        expect(video.link).to eq 'https://www.instagram.com/p/BVAYzy_g3vN/'
-      end
-    end
-
-    context 'given a nonexistant video' do
-      let(:media_id) { unknown_media_id }
-      it { expect{video}.to raise_error SocialNet::Instagram::UnknownVideo }
-    end
-  end
-
-  describe '.find_by! shortcode' do
+  describe '.find_by! public shortcode' do
     subject(:video) { SocialNet::Instagram::Video.find_by! shortcode: shortcode }
 
-    context 'given an existing video\'s shortcode' do
+    context 'given an existing public video\'s shortcode' do
       let(:shortcode) { existing_video_shortcode }
 
       it 'returns an object representing that video' do
-        expect(video.id).to eq '1566861445805885015_487786346'
+        expect(video.id).to eq 'BW-nC7xg8ZX'
         expect(video.link).to eq 'https://www.instagram.com/p/BW-nC7xg8ZX/'
       end
     end
@@ -77,8 +39,8 @@ describe SocialNet::Instagram::Video, :vcr do
     end
   end
 
-  describe '.find_by! private_shortcode' do
-    subject(:video) { SocialNet::Instagram::Video.find_by_private_shortcode! private_shortcode }
+  describe '.find_by! private shortcode' do
+    subject(:video) { SocialNet::Instagram::Video.find_by_shortcode! private_shortcode }
 
     context 'given an existing private video\'s shortcode' do
       let(:private_shortcode) { existing_private_shortcode }
@@ -89,7 +51,7 @@ describe SocialNet::Instagram::Video, :vcr do
       end
     end
 
-    context 'given a nonexistant video shortcode' do
+    context 'given a nonexistant private video shortcode' do
       let(:private_shortcode) { unknown_private_shortcode }
       it { expect{video}.to raise_error SocialNet::Instagram::UnknownVideo }
     end
