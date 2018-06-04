@@ -46,3 +46,7 @@ For more information about changelogs, check
 
 * [BUGFIX] Remove deprecated `find_by media_id` endpoint.
 * [IMPROVEMENT] Remove `find_by private_shortcode`.
+
+## 0.2.12 - 2018-06-04
+
+* [BUGFIX] Update deprecated `user.videos` method and add scraping support.
