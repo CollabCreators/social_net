@@ -1,4 +1,5 @@
 require 'social_net/instagram/api/request'
+require 'social_net/instagram/api/scrape_user_videos_request'
 require 'social_net/instagram/errors'
 
 module SocialNet
@@ -9,17 +10,16 @@ module SocialNet
 
         def initialize(attrs = {})
           @id = attrs['id']
-          @username = attrs['username']
-          @follower_count = attrs['counts']['followed_by']
+          @username = attrs[:username]
+          @follower_count = attrs['counts']['followed_by'] if attrs['counts']
         end
 
         # Returns the existing Instagram user's most recent videos
         #
         # @return [SocialNet::Instagram::Models::Video] when the videos are found.
         def videos
-          request = Api::Request.new endpoint: "users/#{id}/media/recent"
-          videos = request.run.select {|p| p['type'] == 'video'}
-          videos.map {|r| SocialNet::Instagram::Video.new r }
+          request = Api::ScrapeUserVideosRequest.new username: @username
+          request.run
         rescue Errors::ResponseError => error
           case error.response
             when Net::HTTPBadRequest then raise Errors::UnknownUser

@@ -7,10 +7,10 @@ require 'nokogiri'
 module SocialNet
   module Instagram
     module Api
-      class ScrapeRequest
+      class ScrapeUserVideosRequest
         def initialize(attrs = {})
           @host = 'www.instagram.com'
-          @path = attrs.fetch :path, "/p/#{attrs[:shortcode]}/"
+          @path = attrs.fetch :path, "/#{attrs[:username]}/"
           @method = attrs.fetch :method, :get
         end
 
@@ -42,19 +42,15 @@ module SocialNet
         end
 
         def parse_video_data(data)
-          script_with_data = data.search("script").detect {|script| script.children[0].content.include? "window._sharedData"}
-          data_string = script_with_data.children[0].content
-          ig_data = eval data_string.gsub(/window\._sharedData = /,"").gsub(/null/,'nil').gsub(/\\/,'')
-          video_data = ig_data[:entry_data][:PostPage][0][:graphql][:shortcode_media]
-          raise Errors::UnknownVideo unless video_data[:is_video]
-          {}.tap do |video|
-            video['id'] = video_data[:shortcode]
-            video['likes'] = {'count' => video_data[:edge_media_preview_like][:count]}
-            video['videos'] = {'standard_resolution' => {'url' => video_data[:video_url]}}
-            video['images'] = {'standard_resolution' => {'url' => video_data[:display_url]}}
-            video['link'] = "https://www.instagram.com/p/#{video_data[:shortcode]}/"
-            if video_data[:edge_media_to_caption][:edges].present?
-              video['caption'] = {'text' => video_data[:edge_media_to_caption][:edges][0][:node][:text]}
+          data_string = data.search("script")[3].children.first
+          ig_data = eval data_string.content.gsub(/window\._sharedData = /,"").gsub(/null/,'nil').gsub(/\\/,'')
+          user_data = ig_data[:entry_data][:ProfilePage][0][:graphql][:user][:edge_owner_to_timeline_media][:edges]
+          vs = [].tap do |videos|
+            user_data.each do |data|
+              if data[:node][:__typename] == "GraphVideo"
+                video = Models::Video.find_by shortcode: data[:node][:shortcode]
+                videos << video
+              end
             end
           end
         end
