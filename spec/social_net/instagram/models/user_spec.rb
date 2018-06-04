@@ -56,7 +56,7 @@ describe SocialNet::Instagram::User, :vcr do
   end
 
   describe '.videos' do
-    subject(:user) { SocialNet::Instagram::User.find_by! username: username }
+    subject(:user) { SocialNet::Instagram::User.new username: username }
     context 'given an existing user' do
       let(:username) { existing_username }
 
