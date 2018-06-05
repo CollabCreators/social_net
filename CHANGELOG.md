@@ -50,3 +50,7 @@ For more information about changelogs, check
 ## 0.2.12 - 2018-06-04
 
 * [BUGFIX] Update deprecated `user.videos` method and add scraping support.
+
+## 0.2.13 - 2018-06-05
+
+* [BUGFIX] Improve scraping for `user.videos` method.
