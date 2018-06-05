@@ -54,3 +54,7 @@ For more information about changelogs, check
 ## 0.2.13 - 2018-06-05
 
 * [BUGFIX] Improve scraping for `user.videos` method.
+
+## 0.2.14 - 2018-06-05
+
+* [BUGFIX] Fix attribute readers bug
