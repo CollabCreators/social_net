@@ -12,19 +12,20 @@ user = SocialNet::Twitter::User.find_by screen_name: 'collab'
 user.screen_name #=> "Collab"
 user.follower_count #=> 48_200
 ```
-After [configuring your Instagram app](#configuring-your-instagram-app), you can run commands like:
+
+For Instagram, you can run commands like:
 
 ```ruby
-user = SocialNet::Instagram::User.find_by username: 'Collab'
-user.username #=> "Collab"
-user.follower_count #=> 7025
+user = SocialNet::Instagram::User.new username: 'Collab'
 user.videos #=>
-  # [SocialNet::Instagram::Models::Video
-  #   @caption='Diet starts Monday... 😂🍩',
-  #   @file='https://scontent.cdninstagram.com/t50.2886-16/17192719_791273527696774_5253726776697290752_n.mp4',
-  #   @id='1464710084172115373_487786346',
-  #   @likes=127,
-  #   @thumbnail='https://scontent.cdninstagram.com/t51.2885-15/e15/17076697_308353549580106_8220285822193106944_n.jpg']"
+  # @caption=
+  #  "30 Likes, 3 Comments - Collab (@collab) on Instagram: “@dribble2much’s ‘Ankle Bully’ ft. @lianev and @globalhooper is out now. Hit our Stories for the…”",
+  # @id="BjGBDnMA7tk",
+  # @link="https://www.instagram.com/p/BjGBDnMA7tk/",
+  # @thumbnail_url=
+  #  "https://scontent-lax3-2.cdninstagram.com/vp/b022f60aa0dca66bf69b42ef120bebaa/5B196165/t51.2885-15/e15/32276184_235590730544586_2982097953704902656_n.jpg",
+  # @video_url=
+  #  "https://scontent-lax3-2.cdninstagram.com/vp/dca9fd7707b3e00d5efd18c98c54e6ba/5B19755C/t50.2886-16/32028990_233788607376727_7097250491033190400_n.mp4">
 ```
 
 After [configuring your Facebook app](#configuring-your-facebook-app), you can run commands like:
