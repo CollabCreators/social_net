@@ -43,16 +43,13 @@ module SocialNet
 
         def parse_video_data(data)
           data_string = data.search("script")[3].children.first
-          ig_data = eval data_string.content.gsub(/window\._sharedData = /,"").gsub(/null/,'nil').gsub(/\\/,'')
-          user_data = ig_data[:entry_data][:ProfilePage][0][:graphql][:user][:edge_owner_to_timeline_media][:edges]
-          vs = [].tap do |videos|
-            user_data.each do |data|
-              if data[:node][:__typename] == "GraphVideo"
-                video = Models::Video.find_by shortcode: data[:node][:shortcode]
-                videos << video
-              end
+          shortcodes = data_string.content.gsub(/window\._sharedData = /,"").gsub(/\\/,'').delete('\\"').scan(/shortcode:([\w_-]{10,39})/).flatten
+          [].tap do |videos|
+            shortcodes.each do |shortcode|
+              video = Models::Video.find_by shortcode: shortcode
+              videos << video
             end
-          end
+          end.compact
         end
 
         def as_curl

@@ -10,11 +10,10 @@ module SocialNet
 
         def initialize(attrs = {})
           @id = attrs['id']
-          @caption = attrs['caption']['text'] if attrs['caption']
-          @likes = attrs['likes']['count']
-          @file = attrs['videos']['standard_resolution']['url']
-          @thumbnail = attrs['images']['standard_resolution']['url']
+          @video_url = attrs['video_url']
+          @thumbnail_url = attrs['thumbnail_url']
           @link = attrs['link']
+          @caption = attrs['caption'] if attrs['caption']
         end
 
         # Returns the existing Instagram video matching the provided attributes or

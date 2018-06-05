@@ -10,6 +10,7 @@ module SocialNet
       class ScrapeRequest
         def initialize(attrs = {})
           @host = 'www.instagram.com'
+          @shortcode = attrs[:shortcode]
           @path = attrs.fetch :path, "/p/#{attrs[:shortcode]}/"
           @method = attrs.fetch :method, :get
         end
@@ -42,20 +43,13 @@ module SocialNet
         end
 
         def parse_video_data(data)
-          script_with_data = data.search("script").detect {|script| script.children[0].content.include? "window._sharedData"}
-          data_string = script_with_data.children[0].content
-          ig_data = eval data_string.gsub(/window\._sharedData = /,"").gsub(/null/,'nil').gsub(/\\/,'')
-          video_data = ig_data[:entry_data][:PostPage][0][:graphql][:shortcode_media]
-          raise Errors::UnknownVideo unless video_data[:is_video]
+          raise Errors::UnknownVideo unless data.at("meta[property='og:type']")['content'] == 'video'
           {}.tap do |video|
-            video['id'] = video_data[:shortcode]
-            video['likes'] = {'count' => video_data[:edge_media_preview_like][:count]}
-            video['videos'] = {'standard_resolution' => {'url' => video_data[:video_url]}}
-            video['images'] = {'standard_resolution' => {'url' => video_data[:display_url]}}
-            video['link'] = "https://www.instagram.com/p/#{video_data[:shortcode]}/"
-            if video_data[:edge_media_to_caption][:edges].present?
-              video['caption'] = {'text' => video_data[:edge_media_to_caption][:edges][0][:node][:text]}
-            end
+            video['id'] = @shortcode
+            video['video_url'] = data.at("meta[property='og:video']")['content']
+            video['thumbnail_url'] = data.at("meta[property='og:image']")['content']
+            video['link'] = data.at("meta[property='og:url']")['content']
+            video['caption'] = data.at("meta[property='og:description']")['content']
           end
         end
 
