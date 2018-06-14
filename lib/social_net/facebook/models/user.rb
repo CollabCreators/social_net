@@ -1,16 +1,19 @@
 require 'social_net/facebook/api/request'
+require 'social_net/facebook/api/scrape_request'
 require 'social_net/facebook/errors'
+require 'social_net/facebook/models/video'
 
 module SocialNet
   module Facebook
     module Models
       class User
-        attr_reader :id, :email, :gender, :first_name, :last_name, :access_token
+        attr_reader :id, :email, :gender, :user_name, :first_name, :last_name, :access_token
 
         def initialize(attrs = {})
           @id = attrs['id']
           @email = attrs['email']
           @gender = attrs['gender']
+          @user_name = attrs[:user_name]
           @first_name = attrs['first_name']
           @last_name = attrs['last_name']
           @access_token = attrs['access_token']
@@ -20,6 +23,17 @@ module SocialNet
           request = Api::Request.new access_token: @access_token, path: "/v2.3/#{@id}/accounts"
           page_json = request.run
           page_json['data'].map { |h| h.slice("name", "id") } if page_json['data'].any?
+        end
+
+        def find_video(id)
+          request = Api::ScrapeRequest.new video_id: id, username: @user_name
+          video = request.run
+          new Models::Video
+        rescue Errors::ResponseError => error
+          case error.response
+          when Net::HTTPBadRequest then raise Errors::UnknownVideo
+          when Net::HTTPNotFound then raise Errors::UnknownVideo
+          end
         end
 
         # Returns the existing Facebook user matching the provided attributes or
