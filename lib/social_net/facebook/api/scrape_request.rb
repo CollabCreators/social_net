@@ -3,6 +3,7 @@ require 'social_net/facebook/errors/unknown_video'
 require 'active_support'
 require 'active_support/core_ext'
 require 'nokogiri'
+require 'pry'
 
 module SocialNet
   module Facebook
@@ -44,15 +45,16 @@ module SocialNet
         end
 
         def parse_video_data(data)
-          data.search('script').select {|s| s.text.include? 'hd_src'}
-          # raise Errors::UnknownVideo unless data.at("meta[property='og:type']")['content'] == 'video'
-          # {}.tap do |video|
-          #   video['id'] = @shortcode
-          #   video['video_url'] = data.at("meta[property='og:video']")['content']
-          #   video['thumbnail_url'] = data.at("meta[property='og:image']")['content']
-          #   video['link'] = data.at("meta[property='og:url']")['content']
-          #   video['caption'] = data.at("meta[property='og:description']")['content']
-          # end
+          m = data.content.match(/hd_src:"([^\\"]*)"/)
+
+          raise Errors::UnknownVideo unless m
+          {}.tap do |video|
+            video['id'] = @video_id
+            video['video_url'] = data.at("meta[property='og:url']")['content']
+            video['link'] = m[1]
+            video['caption'] = data.at("meta[property='og:description']")['content']
+            video['thumbnail_url'] = data.at("meta[property='og:image']")['content']
+          end
         end
 
         def as_curl
