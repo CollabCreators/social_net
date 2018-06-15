@@ -58,3 +58,7 @@ For more information about changelogs, check
 ## 0.2.14 - 2018-06-05
 
 * [BUGFIX] Fix attribute readers bug
+
+## 0.2.15 - 2018-06-15
+
+* [FEATURE] Add `Facebook::Video` model and support for `find_by_username_and_video_id`.
