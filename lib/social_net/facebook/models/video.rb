@@ -5,7 +5,7 @@ module SocialNet
   module Facebook
     module Models
       class Video
-        attr_reader :id, :video_url, :link
+        attr_reader :id, :link, :video_url, :thumbnail_url, :caption
 
         def initialize(attrs={})
           @id = attrs['id']

@@ -28,7 +28,7 @@ module SocialNet
         def find_video(id)
           request = Api::ScrapeRequest.new video_id: id, username: @user_name
           video = request.run
-          new Models::Video
+          Models::Video.new video
         rescue Errors::ResponseError => error
           case error.response
           when Net::HTTPBadRequest then raise Errors::UnknownVideo

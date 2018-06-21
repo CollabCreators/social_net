@@ -3,7 +3,6 @@ require 'social_net/facebook/errors/unknown_video'
 require 'active_support'
 require 'active_support/core_ext'
 require 'nokogiri'
-require 'pry'
 
 module SocialNet
   module Facebook
