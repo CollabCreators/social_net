@@ -62,3 +62,7 @@ For more information about changelogs, check
 ## 0.2.15 - 2018-06-15
 
 * [FEATURE] Add `Facebook::Video` model and support for `find_by_username_and_video_id`.
+
+## 0.2.16 - 2018-06-21
+
+* [FEATURE] Add `Facebook::User` support for `find_video`.
