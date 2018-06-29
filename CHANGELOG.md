@@ -66,3 +66,7 @@ For more information about changelogs, check
 ## 0.2.16 - 2018-06-21
 
 * [FEATURE] Add `Facebook::User` support for `find_video`.
+
+## 0.2.17 - 2018-06-29
+
+* [IMPROVEMENT] Add error handling for an unknown user when using `.videos` for a `Instagram::User`.
