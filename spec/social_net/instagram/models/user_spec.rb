@@ -13,6 +13,7 @@ describe SocialNet::Instagram::User, :vcr do
   let(:existing_username) { 'Collab' }
   let(:unknown_username) { '01LjqweoojkjR' }
   let(:private_username) { '4ever_kelz' }
+  let(:nonexistant_username) { 'ajmgangsta' }
 
   describe '.find_by' do
     subject(:user) { SocialNet::Instagram::User.find_by username: username }
@@ -64,6 +65,11 @@ describe SocialNet::Instagram::User, :vcr do
         expect(user.videos).to be_an Array
         expect(user.videos.first).to be_an_instance_of SocialNet::Instagram::Video
       end
+    end
+
+    context 'given a nonexistant user' do
+      let(:username) { nonexistant_username }
+      it { expect{user.videos}.to raise_error SocialNet::Instagram::UnknownUser }
     end
   end
 end

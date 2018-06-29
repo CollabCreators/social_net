@@ -23,6 +23,7 @@ module SocialNet
         rescue Errors::ResponseError => error
           case error.response
             when Net::HTTPBadRequest then raise Errors::UnknownUser
+            when Net::HTTPNotFound then raise Errors::UnknownUser
           end
         end
 
