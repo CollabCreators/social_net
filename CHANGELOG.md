@@ -70,3 +70,7 @@ For more information about changelogs, check
 ## 0.2.17 - 2018-06-29
 
 * [IMPROVEMENT] Add error handling for an unknown user when using `.videos` for a `Instagram::User`.
+
+## 0.2.18 - 2019-01-03
+
+* [BUGFIX] Fix scraping for `user.videos` method.
