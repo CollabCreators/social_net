@@ -42,7 +42,7 @@ module SocialNet
         end
 
         def parse_video_data(data)
-          data_string = data.search("script")[3].children.first
+          data_string = data.search("script")[4].children.first
           shortcodes = data_string.content.gsub(/window\._sharedData = /,"").gsub(/\\/,'').delete('\\"').scan(/shortcode:([\w_-]{10,39})/).flatten
           [].tap do |videos|
             shortcodes.each do |shortcode|
