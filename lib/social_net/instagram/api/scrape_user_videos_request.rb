@@ -55,9 +55,6 @@ module SocialNet
         def as_curl
           'curl'.tap do |curl|
             curl <<  " -X #{http_request.method}"
-            http_request.each_header do |name, value|
-              curl << %Q{ -H "#{name}: #{value}"}
-            end
             curl << %Q{ -d '#{http_request.body}'} if http_request.body
             curl << %Q{ "#{@uri.to_s}"}
           end

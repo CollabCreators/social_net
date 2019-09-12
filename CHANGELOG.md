@@ -74,3 +74,7 @@ For more information about changelogs, check
 ## 0.2.18 - 2019-01-03
 
 * [BUGFIX] Fix scraping for `user.videos` method.
+
+## 0.2.19 - 2019-09-12
+
+* [BUGFIX] Fix scraping for `user.videos` method.  Fixed by removing weird ruby headers
