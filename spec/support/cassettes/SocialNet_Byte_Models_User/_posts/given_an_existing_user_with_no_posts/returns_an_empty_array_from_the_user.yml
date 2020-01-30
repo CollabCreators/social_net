@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.byte.co/account/id/EGDL2NQ6WRFQRBSY6Q5D5HWKHQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - ACCESS_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 30 Jan 2020 23:15:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit:
+      - '21'
+      X-Ratelimit-Remaining:
+      - '14'
+      X-Ratelimit-Reset:
+      - '4'
+      Via:
+      - 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"EGDL2NQ6WRFQRBSY6Q5D5HWKHQ","isRegistered":true,"isChannel":false,"isSuspended":false,"isDeactivated":false,"registrationDate":1580153145,"username":"surferjermz","backgroundColor":"#000000","foregroundColor":"#CCD6E9","followerCount":3,"followingCount":2,"loopCount":31,"loopsConsumedCount":46},"success":1}'
+    http_version: 
+  recorded_at: Thu, 30 Jan 2020 23:15:06 GMT
+- request:
+    method: get
+    uri: https://api.byte.co/account/id/EGDL2NQ6WRFQRBSY6Q5D5HWKHQ/posts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - ACCESS_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 30 Jan 2020 23:15:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit:
+      - '21'
+      X-Ratelimit-Remaining:
+      - '14'
+      X-Ratelimit-Reset:
+      - '5'
+      Via:
+      - 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"posts":[],"accounts":{}},"success":1}'
+    http_version: 
+  recorded_at: Thu, 30 Jan 2020 23:15:06 GMT
+- request:
+    method: get
+    uri: https://api.byte.co/account/id/EGDL2NQ6WRFQRBSY6Q5D5HWKHQ/posts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - ACCESS_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 30 Jan 2020 23:15:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit:
+      - '21'
+      X-Ratelimit-Remaining:
+      - '13'
+      X-Ratelimit-Reset:
+      - '5'
+      Via:
+      - 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"posts":[],"accounts":{}},"success":1}'
+    http_version: 
+  recorded_at: Thu, 30 Jan 2020 23:15:06 GMT
+recorded_with: VCR 2.9.3

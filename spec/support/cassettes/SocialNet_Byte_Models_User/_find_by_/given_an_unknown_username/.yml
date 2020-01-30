@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.byte.co/account/prefix/01LjqweoojkjR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - ACCESS_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 30 Jan 2020 23:15:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit:
+      - '21'
+      X-Ratelimit-Remaining:
+      - '16'
+      X-Ratelimit-Reset:
+      - '3'
+      Via:
+      - 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"accounts":[]},"success":1}'
+    http_version: 
+  recorded_at: Thu, 30 Jan 2020 23:15:04 GMT
+recorded_with: VCR 2.9.3

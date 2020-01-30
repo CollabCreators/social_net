@@ -1,9 +1,17 @@
 SocialNet - a Ruby client for social networks API
 ===========================================
 
-SocialNet helps you write apps that need to interact with Twitter, Instagram and Facebook.
+SocialNet helps you write apps that need to interact with Instagram, Byte, Twitter, and Facebook.
 
-## Note: Only Instagram works at the moment
+## Note: Only Instagram and Byte works at the moment
+
+After [configuring your Byte app](#configuring-your-byte-app), you can run commands like:
+
+```ruby
+user = SocialNet::Byte::User.find_by username: 'ollie'
+user.username #=> "ollie"
+user.follower_count #=> 300
+```
 
 After [configuring your Twitter app](#configuring-your-twitter-app), you can run commands like:
 
@@ -115,6 +123,65 @@ video.link #=> 'https://www.instagram.com/p/BW-nC7xg8ZX/'
 video.file #=> 'https://scontent.cdninstagram.com/t50.2886-16/20372137_156190564936990_2601958215176421376_n.mp4'
 ```
 
+SocialNet::Byte::User
+--------------------
+
+Use [SocialNet::Byte::User]() to:
+
+* retrieve a Byte user by username
+* retrieve a Byte user by id
+* retrieve posts of a Byte user
+
+```ruby
+user = SocialNet::Byte::User.find_by username: 'ollie'
+user.follower_count #=> 0
+
+user = SocialNet::Byte::User.find_by id: 'PUEMKGYDBFAZ3HSRSAFGBAI5HA'
+user.follower_count #=> 0
+
+user.posts #=>
+ # {:posts=>
+ # [#<SocialNet::Byte::Models::Post:0x00007fb71b8705a8
+ #  @author_id="PUEMKGYDBFAZ3HSRSAFGBAI5HA",
+ #  @caption="i’m in ya house (ft. @Tishsimmonds)",
+ #  @category="comedy",
+ #  @comment_count=110,
+ #  @date=1580391236,
+ #  @id="WZPPQ5LQJZAAHP4BWFLM6PRBNM",
+ #  @like_count=2439,
+ #  @loop_count=34891,
+ #  @thumb_src="https://e6k9t9a9.stackpathcdn.com/videos/5VVTQ4TTZBCRRHWDUPIZNUWDKM.jpg",
+ #  @video_src="https://e6k9t9a9.stackpathcdn.com/videos/5VVTQ4TTZBCRRHWDUPIZNUWDKM-h264.mp4">],
+ # :next_page=>"CXWZB7CTMYLTA"}
+
+user.posts(next_page: 'CXWZB7CTMYLTA') #=>
+  # {:posts=>
+  # [#<SocialNet::Byte::Models::Post:0x00007fb718468788
+  #  @author_id="PUEMKGYDBFAZ3HSRSAFGBAI5HA",
+  #  @caption="pov of a hungry person thinking byte is a delivery food app",
+  #  @category="comedy",
+  #  @comment_count=95,
+  #  @date=1580043689,
+  #  @id="PNHNHKO3RZF2HJVHSD64V4X3LE",
+  #  @like_count=2605,
+  #  @loop_count=23982,
+  #  @share_url="https://byte.co/b/B69eUGbPcDM",
+  #  @thumb_src="https://e6k9t9a9.stackpathcdn.com/videos/XRIRCMQZGBAUDLCWUJQPHGYYEE.jpg",
+  #  @video_src="https://e6k9t9a9.stackpathcdn.com/videos/XRIRCMQZGBAUDLCWUJQPHGYYEE-h264.mp4">,
+  # :next_page=>"CXWPROPUQCCNQ"}
+```
+
+Use [SocialNet::Byte::Post]() to:
+
+* retrieve a Byte post by id
+
+```ruby
+post = SocialNet::Byte::Post.find_by id: 'WZPPQ5LQJZAAHP4BWFLM6PRBNM'
+
+post.caption #=> "i’m in ya house (ft. @Tishsimmonds)"
+post.video_src #=> "https://e6k9t9a9.stackpathcdn.com/videos/5VVTQ4TTZBCRRHWDUPIZNUWDKM-h264.mp4"
+```
+
 SocialNet::Facebook::Page
 --------------------
 
@@ -222,6 +289,40 @@ end
 
 so use the approach that you prefer.
 If a variable is set in both places, then `SocialNet::Instagram.configure` takes precedence.
+
+Configuring your Byte app
+============================
+
+Once the app is created, copy your access token and add it to your
+code with the following snippet of code (replacing with your own access token)
+:
+
+```ruby
+SocialNet::Byte.configure do |config|
+  config.access_token = 'abcdefg'
+end
+```
+
+Configuring with environment variables
+--------------------------------------
+
+As an alternative to the approach above, you can configure your app with
+a variable. Setting the following environment variable:
+
+```bash
+export BYTE_ACCESS_TOKEN='abcdefg'
+```
+
+is equivalent to configuring your app with the initializer:
+
+```ruby
+SocialNet::Byte.configure do |config|
+  config.access_token = 'abcdefg'
+end
+```
+
+so use the approach that you prefer.
+If a variable is set in both places, then `SocialNet::Byte.configure` takes precedence.
 
 Configuring your Facebook app
 ============================
