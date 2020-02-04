@@ -20,6 +20,7 @@ module SocialNet
           print "#{as_curl}\n"
           case response = run_http_request
           when Net::HTTPOK
+            rate_limit_reset response.header["x-ratelimit-remaining"].to_i
             JSON response.body
           else
             raise Errors::ResponseError, response
@@ -53,6 +54,14 @@ module SocialNet
           {}.tap do |query|
             query.merge! cursor: @next_page if @next_page
           end.to_param
+        end
+
+        def rate_limit_reset(number_of_tries)
+          puts number_of_tries
+          if number_of_tries == 1
+            puts "Sleeping 20 seconds to reset the rate limit"
+            sleep 20
+          end
         end
 
         def as_curl
