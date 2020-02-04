@@ -57,7 +57,6 @@ module SocialNet
         end
 
         def rate_limit_reset(number_of_tries)
-          puts number_of_tries
           if number_of_tries == 1
             puts "Sleeping 20 seconds to reset the rate limit"
             sleep 20
