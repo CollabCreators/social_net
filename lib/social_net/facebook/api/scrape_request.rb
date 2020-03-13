@@ -3,6 +3,7 @@ require 'social_net/facebook/errors/unknown_video'
 require 'active_support'
 require 'active_support/core_ext'
 require 'nokogiri'
+require 'net/http'
 
 module SocialNet
   module Facebook
@@ -51,7 +52,7 @@ module SocialNet
             video['id'] = @video_id
             video['video_url'] = data.at("meta[property='og:url']")['content']
             video['link'] = m[1]
-            video['caption'] = data.at("meta[property='og:description']")['content']
+            video['caption'] = data.at("meta[name='description']")['content']
             video['thumbnail_url'] = data.at("meta[property='og:image']")['content']
           end
         end
