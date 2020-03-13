@@ -71,9 +71,3 @@ module SocialNet
     end
   end
 end
-
-# https://www.facebook.com/TimHowellADVENTURE/videos/1280907158777599/?v=1280907158777599
-
-s = SocialNet::Facebook::Api::ScrapeRequest.new attrs={username: 'TimHowellADVENTURE', video_id: '1280907158777599'}
-
-s.run
